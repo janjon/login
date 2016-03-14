@@ -36,7 +36,7 @@ if (isDeveloping) {
   app.set('showStackError', true);
   app.use(logger(':method :url :status'));
   app.locals.pretty = true;
-  
+
   const compiler = webpack(config);
   const middleware = webpackMiddleware(compiler, {
     publicPath: config.output.publicPath,
@@ -62,9 +62,9 @@ if (isDeveloping) {
   });
 }
 
-app.listen(port, '192.168.0.141', function(err) {
+app.listen(port, '127.0.0.1', function(err) {
   if (err) {
     console.log(err);
   }
-  console.info('==> 🌎 Listening on port %s. Open up http://192.168.0.141:%s/ in your browser.', port, port);
+  console.info('==> 🌎 Listening on port %s. Open up http://127.0.0.1:%s/ in your browser.', port, port);
 });
