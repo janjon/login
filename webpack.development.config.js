@@ -30,7 +30,7 @@ config.plugins = config.plugins.concat([
 ]);
 
 config.module.loaders = config.module.loaders.concat([
-  { test: /\.jsx?$/, loaders: ['react-hot', 'babel'], exclude: /node_modules/ },
+  { test: /\.jsx?$/, loader: 'babel', exclude: /node_modules/, query: {presets: ['es2015', 'stage-0', 'react']}},
   { test: /\.css$/, loader: ExtractTextPlugin.extract('style', 'css?sourceMap', "postcss") },
   { test: /\.scss$/, loader: ExtractTextPlugin.extract('style', 'css!postcss!sass?sourceMap') },
   { test: /\.(jpe?g|png|gif|svg)$/i, loaders: ['url?limit=10000'] },
